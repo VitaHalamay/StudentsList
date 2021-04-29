@@ -74,38 +74,6 @@ float GetSumAvg() {
 
 //-------------------------------------------------------------------
 
-// Виводить таблицю з даними про студентів
-// Приймає опис для таблиці,0 для виводу без урахування середнього балу або 1 - у зворотньому випадку
-void PrintTable(char *cTitle, int nIgnoreGroupAvgCondition) {
-	printf("\n%s\n", cTitle);
-	printf("_______________________________________________________________\n");
-	printf("  Last Name       | First Name| Marks        | Date of birth    \n");
-	printf("__________________|___________|______________|_________________\n");
-
-	float nGroupAvg = GetSumAvg() / GetStudentsCount();
-	struct SList *pCurrentItem = pFirstItem;
-	while (1) {
-		if (nIgnoreGroupAvgCondition == 1 || nGroupAvg > pCurrentItem->sStudent.fMarksAvg) {
-			PrintRow(pCurrentItem->sStudent);
-		}
-		if (pCurrentItem->pNext == NULL) {
-			break;
-		}
-		pCurrentItem = pCurrentItem->pNext;
-	}
-}
-
-//-------------------------------------------------------------------
-
-// Виводить рядок з даними про студента
-void PrintRow(struct SStudent sCurrentStudent) {
-	printf("%18s| %10s| ", sCurrentStudent.cLastName, sCurrentStudent.cFirstName);
-	printf("%7d %2d %2d|", sCurrentStudent.nMarks[0], sCurrentStudent.nMarks[1], sCurrentStudent.nMarks[2]);
-	char cDate[12];
-	strftime(cDate, 11, "%d.%m.%Y", &sCurrentStudent.sBirthday);
-	printf(" %s \n", cDate);
-	printf("__________________|___________|______________|_________________\n");
-}
 //-------------------------------------------------------------------
 
 //using namespace System::Windows::Forms;

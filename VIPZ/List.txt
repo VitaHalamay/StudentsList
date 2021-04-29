@@ -1,2 +1,6 @@
 first Vita 10.04.2003 5 5 5
-second Vita 10.04.2003 5 5 5
+second Vita 10.04.2003 5 2 4
+third student 11.12.2003 5 4 5
+fourth student 11.08.2003 3 4 5
+fifth student 10.02.2003 5 4 3
+sixth student 01.03.2003 5 4 1
