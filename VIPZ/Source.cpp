@@ -196,7 +196,8 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 	}
 	// InsertStudent to the middle of linked list
 	struct SList *pCurrentItem = pFirstItem;
-	while (pCurrentItem->pNext != NULL) {
+	
+	while (pCurrentItem->pNext != nullptr) {
 		if (CompareBirthday(pCurrentItem->pNext->sStudent.sBirthday, sStudentToInsert.sBirthday) == 1) {
 			struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
 			pItemToInsert->sStudent = sStudentToInsert;
@@ -207,7 +208,7 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 		pCurrentItem = pCurrentItem->pNext;
 	}
 	// InsertStudent to the end
-	if (pCurrentItem->pNext == NULL
+	if (pCurrentItem->pNext == nullptr
 		&& CompareBirthday(sStudentToInsert.sBirthday, pCurrentItem->sStudent.sBirthday) == 1) {
 		struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
 		pItemToInsert->sStudent = sStudentToInsert;
@@ -228,7 +229,6 @@ void DeleteStudentWithout5() {
 			&& pCurrentItem->sStudent.nMarks[1] != 5
 			&& pCurrentItem->sStudent.nMarks[2] != 5) {
 			pCurrentItem = pCurrentItem->pNext;
-			free(pFirstItem);
 			pFirstItem = pCurrentItem;
 			nMoveNext = 0;
 		}
@@ -236,7 +236,6 @@ void DeleteStudentWithout5() {
 			&& pCurrentItem->pNext->sStudent.nMarks[0] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[1] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[2] != 5) {
-			free(pCurrentItem->pNext);
 			pCurrentItem->pNext = pCurrentItem->pNext->pNext;
 			nMoveNext = 0;
 		}

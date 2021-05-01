@@ -64,6 +64,7 @@ namespace VIPZ {
 	private: System::Windows::Forms::ComboBox^  MathComboBox;
 	private: System::Windows::Forms::ComboBox^  HistoryComboBox;
 	private: System::Windows::Forms::ComboBox^  BiologyComboBox;
+	private: System::Windows::Forms::Button^  deleteButton;
 
 
 
@@ -117,6 +118,7 @@ namespace VIPZ {
 			this->MathComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->HistoryComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->BiologyComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->deleteButton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->Panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -258,11 +260,22 @@ namespace VIPZ {
 			this->BiologyComboBox->Size = System::Drawing::Size(121, 24);
 			this->BiologyComboBox->TabIndex = 9;
 			// 
+			// deleteButton
+			// 
+			this->deleteButton->Location = System::Drawing::Point(57, 177);
+			this->deleteButton->Name = L"deleteButton";
+			this->deleteButton->Size = System::Drawing::Size(130, 23);
+			this->deleteButton->TabIndex = 4;
+			this->deleteButton->Text = L"Delete without 5";
+			this->deleteButton->UseVisualStyleBackColor = true;
+			this->deleteButton->Click += gcnew System::EventHandler(this, &StudentsList::deleteButton_Click);
+			// 
 			// StudentsList
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1056, 628);
+			this->Controls->Add(this->deleteButton);
 			this->Controls->Add(this->Panel1);
 			this->Controls->Add(this->AddNewStudentButton);
 			this->Controls->Add(this->button1);
@@ -301,13 +314,15 @@ namespace VIPZ {
 		toCharArray(student.cLastName, LastNameTextBox->Text);
 		//student.sBirthday = dateTimePicker1->Text;
 		toTmStruct(student.sBirthday, dateTimePicker1->Value);
-		//student.sBirthday.tm_mday = 1;
-		//student.sBirthday.tm_mon = 5;
-		//student.sBirthday.tm_year = 2003;
+		
 		InsertStudent(student);
 
 		PrintTableForms(dataGridView1);
 	}
 
+private: System::Void deleteButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	DeleteStudentWithout5();
+	PrintTableForms(dataGridView1);
+}
 };
 }
