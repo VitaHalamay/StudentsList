@@ -232,7 +232,7 @@ void DeleteStudentWithout5() {
 			pFirstItem = pCurrentItem;
 			nMoveNext = 0;
 		}
-		if (pCurrentItem->pNext != NULL
+		if (pCurrentItem->pNext !=nullptr
 			&& pCurrentItem->pNext->sStudent.nMarks[0] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[1] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[2] != 5) {
@@ -240,7 +240,7 @@ void DeleteStudentWithout5() {
 			pCurrentItem->pNext = pCurrentItem->pNext->pNext;
 			nMoveNext = 0;
 		}
-		if (pCurrentItem->pNext == NULL) {
+		if (pCurrentItem->pNext == nullptr) {
 			break;
 		}
 		if (nMoveNext == 1) {

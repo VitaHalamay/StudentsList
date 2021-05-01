@@ -11,6 +11,7 @@
 
 //структура даних для опису кожного студента
 struct SStudent {
+
 	char cLastName[20];
 	char cFirstName[20];
 	int nMarks[3];
