@@ -48,6 +48,6 @@ float GetSumAvg();
 void PrintRowInFile(struct SStudent sCurrentStudent, FILE *pFile);
 
 void PrintTableInFile(char *cTitle, int nIgnoreGroupAvgCondition, FILE *pFile);
-
-
+void toCharArray(char charArray[20], System::String^ systemString);
+void toTmStruct(struct tm &date, System::DateTime^ dateTime);
 #endif

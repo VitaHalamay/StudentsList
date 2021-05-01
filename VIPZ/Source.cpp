@@ -83,14 +83,14 @@ void PrintTableForms(DataGridView^ dgv) {
 	int i = 0;
 	while (pCurrentItem != nullptr) {//->pNext
 		dgv->Rows[i]->Cells[0]->Value = i + 1;
-		String^ sCertificate;
-		//sCertificate = 
 		
+		DateTime^ date = gcnew DateTime(pCurrentItem->sStudent.sBirthday.tm_year,
+			pCurrentItem->sStudent.sBirthday.tm_mon,
+			pCurrentItem->sStudent.sBirthday.tm_mday);
+
 		dgv->Rows[i]->Cells[1]->Value = gcnew String(pCurrentItem->sStudent.cFirstName);
 		dgv->Rows[i]->Cells[2]->Value = gcnew String(pCurrentItem->sStudent.cLastName);
-		dgv->Rows[i]->Cells[3]->Value = (pCurrentItem->sStudent.sBirthday.tm_mday) + "."
-			+ (pCurrentItem->sStudent.sBirthday.tm_mon) + "."
-			+ (pCurrentItem->sStudent.sBirthday.tm_mday);
+		dgv->Rows[i]->Cells[3]->Value = date->ToString("d");
 		dgv->Rows[i]->Cells[4]->Value = pCurrentItem->sStudent.nMarks[0];
 		dgv->Rows[i]->Cells[5]->Value = pCurrentItem->sStudent.nMarks[1];
 		dgv->Rows[i]->Cells[6]->Value = pCurrentItem->sStudent.nMarks[2];
@@ -232,7 +232,7 @@ void DeleteStudentWithout5() {
 			pFirstItem = pCurrentItem;
 			nMoveNext = 0;
 		}
-		if (pCurrentItem->pNext !=nullptr
+		if (pCurrentItem->pNext != nullptr
 			&& pCurrentItem->pNext->sStudent.nMarks[0] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[1] != 5
 			&& pCurrentItem->pNext->sStudent.nMarks[2] != 5) {
@@ -285,7 +285,7 @@ void PrintRowInFile(struct SStudent sCurrentStudent, FILE *pFile) {
 	fprintf(pFile, " %s \n", cDate);
 	fprintf(pFile, "__________________|___________|______________|_________________\n");
 }
-using namespace std;
+//using namespace std;
 /*
 String^ toString(struct tm date) {
 	//return"hello";
@@ -293,3 +293,16 @@ String^ toString(struct tm date) {
 	//return to_string(date.tm_mday) + "."+ to_string(date.tm_mon)+"."+ to_string(date.tm_mday);
 }
 */
+void toCharArray(char charArray[20], System::String^ systemString) {
+	int length = systemString->Length;
+	//	char charArray[20];
+	for (int i = 0; i < length; i++) {
+		charArray[i] = systemString[i];
+	}
+
+}
+void toTmStruct(struct tm &date, System::DateTime^ dateTime) {
+	date.tm_mday = dateTime->Day;
+	date.tm_mon = dateTime->Month;
+	date.tm_year = dateTime->Year;
+}

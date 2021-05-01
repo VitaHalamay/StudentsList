@@ -55,10 +55,19 @@ namespace VIPZ {
 
 	private: System::Windows::Forms::TextBox^  FirstNameTextBox;
 	private: System::Windows::Forms::TextBox^  LastNameTextBox;
-	private: System::Windows::Forms::TextBox^  BirthdayTextBox;
-	private: System::Windows::Forms::TextBox^  MathTextBox;
-	private: System::Windows::Forms::TextBox^  HistoryTextBox;
-	private: System::Windows::Forms::TextBox^  BiologyTextBox;
+
+
+
+
+
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+	private: System::Windows::Forms::ComboBox^  MathComboBox;
+	private: System::Windows::Forms::ComboBox^  HistoryComboBox;
+	private: System::Windows::Forms::ComboBox^  BiologyComboBox;
+
+
+
+
 
 
 
@@ -104,10 +113,10 @@ namespace VIPZ {
 			this->Panel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->FirstNameTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->LastNameTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->BirthdayTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->MathTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->HistoryTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->BiologyTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->MathComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->HistoryComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->BiologyComboBox = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->Panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -192,13 +201,13 @@ namespace VIPZ {
 			// 
 			this->Panel1->Controls->Add(this->FirstNameTextBox);
 			this->Panel1->Controls->Add(this->LastNameTextBox);
-			this->Panel1->Controls->Add(this->BirthdayTextBox);
-			this->Panel1->Controls->Add(this->MathTextBox);
-			this->Panel1->Controls->Add(this->HistoryTextBox);
-			this->Panel1->Controls->Add(this->BiologyTextBox);
-			this->Panel1->Location = System::Drawing::Point(36, 506);
+			this->Panel1->Controls->Add(this->dateTimePicker1);
+			this->Panel1->Controls->Add(this->MathComboBox);
+			this->Panel1->Controls->Add(this->HistoryComboBox);
+			this->Panel1->Controls->Add(this->BiologyComboBox);
+			this->Panel1->Location = System::Drawing::Point(28, 530);
 			this->Panel1->Name = L"Panel1";
-			this->Panel1->Size = System::Drawing::Size(522, 69);
+			this->Panel1->Size = System::Drawing::Size(599, 69);
 			this->Panel1->TabIndex = 3;
 			// 
 			// FirstNameTextBox
@@ -215,33 +224,39 @@ namespace VIPZ {
 			this->LastNameTextBox->Size = System::Drawing::Size(81, 22);
 			this->LastNameTextBox->TabIndex = 1;
 			// 
-			// BirthdayTextBox
+			// dateTimePicker1
 			// 
-			this->BirthdayTextBox->Location = System::Drawing::Point(177, 3);
-			this->BirthdayTextBox->Name = L"BirthdayTextBox";
-			this->BirthdayTextBox->Size = System::Drawing::Size(81, 22);
-			this->BirthdayTextBox->TabIndex = 2;
+			this->dateTimePicker1->Location = System::Drawing::Point(177, 3);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(200, 22);
+			this->dateTimePicker1->TabIndex = 6;
 			// 
-			// MathTextBox
+			// MathComboBox
 			// 
-			this->MathTextBox->Location = System::Drawing::Point(264, 3);
-			this->MathTextBox->Name = L"MathTextBox";
-			this->MathTextBox->Size = System::Drawing::Size(81, 22);
-			this->MathTextBox->TabIndex = 3;
+			this->MathComboBox->FormattingEnabled = true;
+			this->MathComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(6) { L"0", L"1", L"2", L"3", L"4", L"5" });
+			this->MathComboBox->Location = System::Drawing::Point(383, 3);
+			this->MathComboBox->Name = L"MathComboBox";
+			this->MathComboBox->Size = System::Drawing::Size(121, 24);
+			this->MathComboBox->TabIndex = 7;
 			// 
-			// HistoryTextBox
+			// HistoryComboBox
 			// 
-			this->HistoryTextBox->Location = System::Drawing::Point(351, 3);
-			this->HistoryTextBox->Name = L"HistoryTextBox";
-			this->HistoryTextBox->Size = System::Drawing::Size(81, 22);
-			this->HistoryTextBox->TabIndex = 4;
+			this->HistoryComboBox->FormattingEnabled = true;
+			this->HistoryComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(6) { L"0", L"1", L"2", L"3", L"4", L"5" });
+			this->HistoryComboBox->Location = System::Drawing::Point(3, 33);
+			this->HistoryComboBox->Name = L"HistoryComboBox";
+			this->HistoryComboBox->Size = System::Drawing::Size(121, 24);
+			this->HistoryComboBox->TabIndex = 8;
 			// 
-			// BiologyTextBox
+			// BiologyComboBox
 			// 
-			this->BiologyTextBox->Location = System::Drawing::Point(438, 3);
-			this->BiologyTextBox->Name = L"BiologyTextBox";
-			this->BiologyTextBox->Size = System::Drawing::Size(81, 22);
-			this->BiologyTextBox->TabIndex = 5;
+			this->BiologyComboBox->FormattingEnabled = true;
+			this->BiologyComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(6) { L"0", L"1", L"2", L"3", L"4", L"5" });
+			this->BiologyComboBox->Location = System::Drawing::Point(130, 33);
+			this->BiologyComboBox->Name = L"BiologyComboBox";
+			this->BiologyComboBox->Size = System::Drawing::Size(121, 24);
+			this->BiologyComboBox->TabIndex = 9;
 			// 
 			// StudentsList
 			// 
@@ -258,7 +273,7 @@ namespace VIPZ {
 			this->Panel1->ResumeLayout(false);
 			this->Panel1->PerformLayout();
 			this->ResumeLayout(false);
-			//this->Panel1->Visible = false;
+
 		}
 #pragma endregion
 		
@@ -273,21 +288,23 @@ namespace VIPZ {
 
 
 	private: System::Void AddNewStudentButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		///this->Panel1->Visible = true;
-		//String^ s = FirstNameTextBox->Text;
-
-		struct SStudent student1 = {"Mike", //(FirstNameTextBox->Text), 
-			"Bin",//Convert::ToChar(LastNameTextBox->Text),
-			Convert::ToInt64(MathTextBox->Text),
-			Convert::ToInt64(HistoryTextBox->Text), 
-			Convert::ToInt64(BiologyTextBox->Text) };
-		//FirstNameTextBox->
 		
-		//student1.cFirstName = s;//FirstNameTextBox->Text;
-		student1.sBirthday.tm_mday = 1;
-		student1.sBirthday.tm_mon = 5;
-		student1.sBirthday.tm_year = 2003;
-		InsertStudent(student1);
+		
+		struct SStudent student = { 
+			"",
+			"",
+			Convert::ToInt64(MathComboBox->Text),
+			Convert::ToInt64(HistoryComboBox->Text), 
+			Convert::ToInt64(BiologyComboBox->Text) };
+		
+		toCharArray(student.cFirstName, FirstNameTextBox->Text);
+		toCharArray(student.cLastName, LastNameTextBox->Text);
+		//student.sBirthday = dateTimePicker1->Text;
+		toTmStruct(student.sBirthday, dateTimePicker1->Value);
+		//student.sBirthday.tm_mday = 1;
+		//student.sBirthday.tm_mon = 5;
+		//student.sBirthday.tm_year = 2003;
+		InsertStudent(student);
 
 		PrintTableForms(dataGridView1);
 	}
