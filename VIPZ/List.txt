@@ -1,6 +1,3 @@
 first Vita 10.04.2001 5 5 5
 second Vita 10.04.2002 5 2 4
 third student 11.12.2003 1 4 1
-fourth student 11.08.2003 3 4 5
-fifth student 10.02.2005 2 4 3
-sixth student 01.03.2001 5 4 1

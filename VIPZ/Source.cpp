@@ -90,13 +90,13 @@ int getFilteredStudentsCount(int nIgnoreGroupAvgCondition) {
 //using namespace System::Windows::Forms;
 void PrintTableForms(DataGridView^ dgv, int nIgnoreGroupAvgCondition) {
 	//dgv->Rows->Clear();
-	
+
 	float nGroupAvg = GetSumAvg() / GetStudentsCount();
 	struct SList *pCurrentItem = pFirstItem;
 	dgv->RowCount = getFilteredStudentsCount(nIgnoreGroupAvgCondition);
 	int i = 0;
-	
-	
+
+
 	while (pCurrentItem != nullptr) {
 		if (nIgnoreGroupAvgCondition == 1 || nGroupAvg > pCurrentItem->sStudent.fMarksAvg) {
 
@@ -170,7 +170,7 @@ void OrderByBirthdayAscending() {
 	while (1) {
 		int nIsSorted = 1;
 		while (1) {
-			if (pCurrentItem->pNext->pNext == nullptr) {
+			if (pCurrentItem->pNext == nullptr) {
 				break;
 			}
 			// order first item
@@ -180,6 +180,11 @@ void OrderByBirthdayAscending() {
 				SwapFirstItem();
 				nIsSorted = 0;
 			}
+
+			if (pCurrentItem->pNext->pNext == nullptr) {
+				break;
+			}
+
 			// order last items
 			if (CompareBirthday(pCurrentItem->pNext->sStudent.sBirthday,
 				pCurrentItem->pNext->pNext->sStudent.sBirthday) == 1) {
@@ -203,6 +208,7 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 	// InsertStudent to the top
 	if (CompareBirthday(pFirstItem->sStudent.sBirthday, sStudentToInsert.sBirthday) == 1) {
 		struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
+		pItemToInsert->pNext = nullptr;
 		pItemToInsert->sStudent = sStudentToInsert;
 		pItemToInsert->pNext = pFirstItem;
 		pFirstItem = pItemToInsert;
@@ -214,6 +220,7 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 	while (pCurrentItem->pNext != nullptr) {
 		if (CompareBirthday(pCurrentItem->pNext->sStudent.sBirthday, sStudentToInsert.sBirthday) == 1) {
 			struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
+			pItemToInsert->pNext = nullptr;
 			pItemToInsert->sStudent = sStudentToInsert;
 			pItemToInsert->pNext = pCurrentItem->pNext;
 			pCurrentItem->pNext = pItemToInsert;
@@ -225,6 +232,7 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 	if (pCurrentItem->pNext == nullptr
 		&& CompareBirthday(sStudentToInsert.sBirthday, pCurrentItem->sStudent.sBirthday) == 1) {
 		struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
+		pItemToInsert->pNext = nullptr;
 		pItemToInsert->sStudent = sStudentToInsert;
 		pCurrentItem->pNext = pItemToInsert;
 		return;
