@@ -65,8 +65,9 @@ namespace VIPZ {
 	private: System::Windows::Forms::ComboBox^  HistoryComboBox;
 	private: System::Windows::Forms::ComboBox^  BiologyComboBox;
 	private: System::Windows::Forms::Button^  deleteButton;
-	private: System::Windows::Forms::Button^  FilterButton;
+
 	private: System::Windows::Forms::Button^  SortButton;
+	private: System::Windows::Forms::CheckBox^  checkBox1;
 
 
 
@@ -121,8 +122,8 @@ namespace VIPZ {
 			this->HistoryComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->BiologyComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->deleteButton = (gcnew System::Windows::Forms::Button());
-			this->FilterButton = (gcnew System::Windows::Forms::Button());
 			this->SortButton = (gcnew System::Windows::Forms::Button());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->Panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -274,16 +275,6 @@ namespace VIPZ {
 			this->deleteButton->UseVisualStyleBackColor = true;
 			this->deleteButton->Click += gcnew System::EventHandler(this, &StudentsList::deleteButton_Click);
 			// 
-			// FilterButton
-			// 
-			this->FilterButton->Location = System::Drawing::Point(77, 260);
-			this->FilterButton->Name = L"FilterButton";
-			this->FilterButton->Size = System::Drawing::Size(75, 23);
-			this->FilterButton->TabIndex = 5;
-			this->FilterButton->Text = L"Filter";
-			this->FilterButton->UseVisualStyleBackColor = true;
-			this->FilterButton->Click += gcnew System::EventHandler(this, &StudentsList::FilterButton_Click);
-			// 
 			// SortButton
 			// 
 			this->SortButton->Location = System::Drawing::Point(77, 319);
@@ -294,13 +285,24 @@ namespace VIPZ {
 			this->SortButton->UseVisualStyleBackColor = true;
 			this->SortButton->Click += gcnew System::EventHandler(this, &StudentsList::SortButton_Click);
 			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(60, 385);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(77, 21);
+			this->checkBox1->TabIndex = 7;
+			this->checkBox1->Text = L"Filtered";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &StudentsList::checkBox1_CheckedChanged);
+			// 
 			// StudentsList
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1056, 628);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->SortButton);
-			this->Controls->Add(this->FilterButton);
 			this->Controls->Add(this->deleteButton);
 			this->Controls->Add(this->Panel1);
 			this->Controls->Add(this->AddNewStudentButton);
@@ -312,50 +314,54 @@ namespace VIPZ {
 			this->Panel1->ResumeLayout(false);
 			this->Panel1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-		
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		ReadStudentsFromFile();
 		DeleteStudentWithout5;
 		//dataGridView1->RowCount = GetStudentsCount();
-		PrintTableForms(dataGridView1,1);
+		PrintTableForms(dataGridView1, ignore);
 
 	}
 
 
 
 	private: System::Void AddNewStudentButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-		
-		struct SStudent student = { 
+
+
+		struct SStudent student = {
 			"",
 			"",
 			Convert::ToInt64(MathComboBox->Text),
-			Convert::ToInt64(HistoryComboBox->Text), 
+			Convert::ToInt64(HistoryComboBox->Text),
 			Convert::ToInt64(BiologyComboBox->Text) };
-		
+
 		toCharArray(student.cFirstName, FirstNameTextBox->Text);
 		toCharArray(student.cLastName, LastNameTextBox->Text);
 		//student.sBirthday = dateTimePicker1->Text;
 		toTmStruct(student.sBirthday, dateTimePicker1->Value);
-		
+
 		InsertStudent(student);
 
-		PrintTableForms(dataGridView1,1);
+		PrintTableForms(dataGridView1, ignore);
 	}
 
-private: System::Void deleteButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	DeleteStudentWithout5();
-	PrintTableForms(dataGridView1,1);
-}
-private: System::Void FilterButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	PrintTableForms(dataGridView1, 0);
-}
-private: System::Void SortButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	OrderByBirthdayAscending();
-	PrintTableForms(dataGridView1, 1);
-}
-};
+	private: System::Void deleteButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		DeleteStudentWithout5();
+		PrintTableForms(dataGridView1, ignore);
+	}
+
+	private: System::Void SortButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		OrderByBirthdayAscending();
+		PrintTableForms(dataGridView1, ignore);
+	}
+			 int ignore = 1;
+	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		ignore = 1 - ignore;
+		PrintTableForms(dataGridView1, ignore);
+	}
+	};
 }
