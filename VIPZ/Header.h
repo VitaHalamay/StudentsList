@@ -25,7 +25,7 @@ struct SList {
 	struct SList *pNext;
 };
 //String^ toString(struct tm date);
-void PrintTableForms(System::Windows::Forms::DataGridView^ dgv);
+void PrintTableForms(System::Windows::Forms::DataGridView^ dgv, int nIgnoreGroupAvgCondition);
 
 void ReadStudentsFromFile();
 

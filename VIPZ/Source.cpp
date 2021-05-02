@@ -65,7 +65,7 @@ int GetStudentsCount() {
 float GetSumAvg() {
 	struct SList *pCurrentItem = pFirstItem;
 	float fSumAvg = 0;
-	while (pCurrentItem->pNext != NULL) {
+	while (pCurrentItem != nullptr) {
 		fSumAvg += pCurrentItem->sStudent.fMarksAvg;
 		pCurrentItem = pCurrentItem->pNext;
 	}
@@ -75,34 +75,48 @@ float GetSumAvg() {
 //-------------------------------------------------------------------
 
 //-------------------------------------------------------------------
-
-//using namespace System::Windows::Forms;
-void PrintTableForms(DataGridView^ dgv) {
+int getFilteredStudentsCount(int nIgnoreGroupAvgCondition) {
 	struct SList *pCurrentItem = pFirstItem;
-	dgv->RowCount = GetStudentsCount();
 	int i = 0;
-	while (pCurrentItem != nullptr) {//->pNext
-		dgv->Rows[i]->Cells[0]->Value = i + 1;
-		
-		DateTime^ date = gcnew DateTime(pCurrentItem->sStudent.sBirthday.tm_year,
-			pCurrentItem->sStudent.sBirthday.tm_mon,
-			pCurrentItem->sStudent.sBirthday.tm_mday);
-
-		dgv->Rows[i]->Cells[1]->Value = gcnew String(pCurrentItem->sStudent.cFirstName);
-		dgv->Rows[i]->Cells[2]->Value = gcnew String(pCurrentItem->sStudent.cLastName);
-		dgv->Rows[i]->Cells[3]->Value = date->ToString("d");
-		dgv->Rows[i]->Cells[4]->Value = pCurrentItem->sStudent.nMarks[0];
-		dgv->Rows[i]->Cells[5]->Value = pCurrentItem->sStudent.nMarks[1];
-		dgv->Rows[i]->Cells[6]->Value = pCurrentItem->sStudent.nMarks[2];
+	float nGroupAvg = GetSumAvg() / GetStudentsCount();
+	while (pCurrentItem != nullptr) {
+		if (nIgnoreGroupAvgCondition == 1 || nGroupAvg > pCurrentItem->sStudent.fMarksAvg) {
+			i++;
+		}
 		pCurrentItem = pCurrentItem->pNext;
-		i++;
+	}
+	return i;
+}
+//using namespace System::Windows::Forms;
+void PrintTableForms(DataGridView^ dgv, int nIgnoreGroupAvgCondition) {
+	//dgv->Rows->Clear();
+	
+	float nGroupAvg = GetSumAvg() / GetStudentsCount();
+	struct SList *pCurrentItem = pFirstItem;
+	dgv->RowCount = getFilteredStudentsCount(nIgnoreGroupAvgCondition);
+	int i = 0;
+	
+	
+	while (pCurrentItem != nullptr) {
+		if (nIgnoreGroupAvgCondition == 1 || nGroupAvg > pCurrentItem->sStudent.fMarksAvg) {
+
+			dgv->Rows[i]->Cells[0]->Value = i + 1;
+
+			DateTime^ date = gcnew DateTime(pCurrentItem->sStudent.sBirthday.tm_year,
+				pCurrentItem->sStudent.sBirthday.tm_mon,
+				pCurrentItem->sStudent.sBirthday.tm_mday);
+
+			dgv->Rows[i]->Cells[1]->Value = gcnew String(pCurrentItem->sStudent.cFirstName);
+			dgv->Rows[i]->Cells[2]->Value = gcnew String(pCurrentItem->sStudent.cLastName);
+			dgv->Rows[i]->Cells[3]->Value = date->ToString("d");
+			dgv->Rows[i]->Cells[4]->Value = pCurrentItem->sStudent.nMarks[0];
+			dgv->Rows[i]->Cells[5]->Value = pCurrentItem->sStudent.nMarks[1];
+			dgv->Rows[i]->Cells[6]->Value = pCurrentItem->sStudent.nMarks[2];
+			i++;
+		}
+		pCurrentItem = pCurrentItem->pNext;
 	}
 }
-//temp = pFirstItem;
-//for (int i = 0; i < nListVolume; i++) {
-//	string strtemp = " ";
-	//strtemp+=
-//}
 
 
 // Порівнює дату народження двох студентів
@@ -156,7 +170,7 @@ void OrderByBirthdayAscending() {
 	while (1) {
 		int nIsSorted = 1;
 		while (1) {
-			if (pCurrentItem->pNext->pNext == NULL) {
+			if (pCurrentItem->pNext->pNext == nullptr) {
 				break;
 			}
 			// order first item
@@ -196,7 +210,7 @@ void InsertStudent(struct SStudent sStudentToInsert) {
 	}
 	// InsertStudent to the middle of linked list
 	struct SList *pCurrentItem = pFirstItem;
-	
+
 	while (pCurrentItem->pNext != nullptr) {
 		if (CompareBirthday(pCurrentItem->pNext->sStudent.sBirthday, sStudentToInsert.sBirthday) == 1) {
 			struct SList *pItemToInsert = (struct SList *) malloc(sizeof(struct SList));
@@ -264,7 +278,7 @@ void PrintTableInFile(char *cTitle, int nIgnoreGroupAvgCondition, FILE *pFile) {
 		if (nIgnoreGroupAvgCondition == 1 || nGroupAvg > pCurrentItem->sStudent.fMarksAvg) {
 			PrintRowInFile(pCurrentItem->sStudent, pFile);
 		}
-		if (pCurrentItem->pNext == NULL) {
+		if (pCurrentItem->pNext == nullptr) {
 			break;
 		}
 		pCurrentItem = pCurrentItem->pNext;
