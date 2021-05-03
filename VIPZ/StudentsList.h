@@ -67,7 +67,7 @@ namespace VIPZ {
 
 
 
-	private: System::Windows::Forms::CheckBox^  checkBox1;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
@@ -82,6 +82,8 @@ namespace VIPZ {
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
 	private: System::Windows::Forms::Panel^  panel2;
+
+
 	private: System::Windows::Forms::PictureBox^  pictureBox6;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
@@ -94,6 +96,16 @@ namespace VIPZ {
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::PictureBox^  pictureBox9;
 	private: System::Windows::Forms::TextBox^  FirstNameTextBox2;
+	private: System::Windows::Forms::Panel^  InsertPanel;
+
+	private: System::Windows::Forms::Panel^  DeletePanel;
+	private: System::Windows::Forms::Panel^  OrderPanel;
+
+	private: System::Windows::Forms::Panel^  LoadPanel;
+	private: System::Windows::Forms::Panel^  ExitPanel;
+
+	private: System::Windows::Forms::Panel^  FilterPanel;
+	private: System::Windows::Forms::Label^  label8;
 
 
 
@@ -131,11 +143,11 @@ namespace VIPZ {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle19 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle20 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(StudentsList::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -153,24 +165,30 @@ namespace VIPZ {
 			this->MathComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->BiologyComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->HistoryComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ExitPanel = (gcnew System::Windows::Forms::Panel());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
+			this->FilterPanel = (gcnew System::Windows::Forms::Panel());
+			this->OrderPanel = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->LoadPanel = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->InsertPanel = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->DeletePanel = (gcnew System::Windows::Forms::Panel());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->Panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -179,9 +197,15 @@ namespace VIPZ {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->panel2->SuspendLayout();
+			this->ExitPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
+			this->FilterPanel->SuspendLayout();
+			this->OrderPanel->SuspendLayout();
+			this->LoadPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+			this->InsertPanel->SuspendLayout();
+			this->DeletePanel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -189,61 +213,61 @@ namespace VIPZ {
 			// 
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle6->BackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle6->ForeColor = System::Drawing::Color::Black;
-			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle16->BackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle16->ForeColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle16->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle16->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Window;
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dataGridView1->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle7->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 8));
-			dataGridViewCellStyle7->ForeColor = System::Drawing::Color::SaddleBrown;
-			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::AppWorkspace;
-			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::Color::SaddleBrown;
-			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle17->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			dataGridViewCellStyle17->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 8));
+			dataGridViewCellStyle17->ForeColor = System::Drawing::Color::SaddleBrown;
+			dataGridViewCellStyle17->SelectionBackColor = System::Drawing::SystemColors::AppWorkspace;
+			dataGridViewCellStyle17->SelectionForeColor = System::Drawing::Color::SaddleBrown;
+			dataGridViewCellStyle17->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
 				this->Column1,
 					this->Column5, this->Column6, this->Column3, this->Column2, this->Column4, this->Column7
 			});
-			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle8->BackColor = System::Drawing::Color::Beige;
-			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle8->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::Color::Beige;
-			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle18->BackColor = System::Drawing::Color::Beige;
+			dataGridViewCellStyle18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			dataGridViewCellStyle18->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle18->SelectionBackColor = System::Drawing::Color::Beige;
+			dataGridViewCellStyle18->SelectionForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle18->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle18;
 			this->dataGridView1->Enabled = false;
 			this->dataGridView1->GridColor = System::Drawing::Color::Khaki;
 			this->dataGridView1->Location = System::Drawing::Point(330, 25);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
-			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle9->BackColor = System::Drawing::Color::DarkOliveGreen;
-			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::DarkOliveGreen;
-			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::Color::Black;
-			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle19->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle19->BackColor = System::Drawing::Color::DarkOliveGreen;
+			dataGridViewCellStyle19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			dataGridViewCellStyle19->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle19->SelectionBackColor = System::Drawing::Color::DarkOliveGreen;
+			dataGridViewCellStyle19->SelectionForeColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle19->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
-			dataGridViewCellStyle10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)),
+			dataGridViewCellStyle20->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)),
 				static_cast<System::Int32>(static_cast<System::Byte>(217)), static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			dataGridViewCellStyle10->ForeColor = System::Drawing::Color::Black;
-			dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)),
+			dataGridViewCellStyle20->ForeColor = System::Drawing::Color::Black;
+			dataGridViewCellStyle20->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)),
 				static_cast<System::Int32>(static_cast<System::Byte>(217)), static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			dataGridViewCellStyle10->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle20->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle20;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridView1->Size = System::Drawing::Size(755, 444);
@@ -387,18 +411,6 @@ namespace VIPZ {
 			this->HistoryComboBox->Size = System::Drawing::Size(88, 24);
 			this->HistoryComboBox->TabIndex = 8;
 			// 
-			// checkBox1
-			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F));
-			this->checkBox1->Location = System::Drawing::Point(80, 525);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(90, 27);
-			this->checkBox1->TabIndex = 7;
-			this->checkBox1->Text = L"Filtered";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &StudentsList::checkBox1_CheckedChanged);
-			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(156)),
@@ -406,7 +418,7 @@ namespace VIPZ {
 			this->pictureBox1->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.ErrorImage")));
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(12, 450);
+			this->pictureBox1->Location = System::Drawing::Point(12, 3);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(62, 56);
 			this->pictureBox1->TabIndex = 11;
@@ -420,7 +432,7 @@ namespace VIPZ {
 			this->pictureBox2->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.ErrorImage")));
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.InitialImage")));
-			this->pictureBox2->Location = System::Drawing::Point(12, 388);
+			this->pictureBox2->Location = System::Drawing::Point(12, 0);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(62, 56);
 			this->pictureBox2->TabIndex = 12;
@@ -434,11 +446,12 @@ namespace VIPZ {
 			this->pictureBox3->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.ErrorImage")));
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.InitialImage")));
-			this->pictureBox3->Location = System::Drawing::Point(12, 512);
+			this->pictureBox3->Location = System::Drawing::Point(12, 3);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(62, 56);
 			this->pictureBox3->TabIndex = 13;
 			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &StudentsList::pictureBox3_Click);
 			// 
 			// pictureBox4
 			// 
@@ -447,7 +460,7 @@ namespace VIPZ {
 			this->pictureBox4->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.ErrorImage")));
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 			this->pictureBox4->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.InitialImage")));
-			this->pictureBox4->Location = System::Drawing::Point(12, 326);
+			this->pictureBox4->Location = System::Drawing::Point(12, 0);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(62, 56);
 			this->pictureBox4->TabIndex = 14;
@@ -463,7 +476,7 @@ namespace VIPZ {
 			this->pictureBox5->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.InitialImage")));
 			this->pictureBox5->Location = System::Drawing::Point(1015, 528);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(70, 64);
+			this->pictureBox5->Size = System::Drawing::Size(62, 56);
 			this->pictureBox5->TabIndex = 15;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Visible = false;
@@ -473,25 +486,28 @@ namespace VIPZ {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(156)),
 				static_cast<System::Int32>(static_cast<System::Byte>(137)));
-			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->pictureBox8);
+			this->panel2->Controls->Add(this->ExitPanel);
+			this->panel2->Controls->Add(this->FilterPanel);
+			this->panel2->Controls->Add(this->OrderPanel);
+			this->panel2->Controls->Add(this->LoadPanel);
+			this->panel2->Controls->Add(this->InsertPanel);
+			this->panel2->Controls->Add(this->DeletePanel);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->label5);
 			this->panel2->Controls->Add(this->pictureBox7);
-			this->panel2->Controls->Add(this->label4);
-			this->panel2->Controls->Add(this->label3);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->pictureBox6);
-			this->panel2->Controls->Add(this->pictureBox4);
-			this->panel2->Controls->Add(this->pictureBox3);
-			this->panel2->Controls->Add(this->pictureBox2);
-			this->panel2->Controls->Add(this->pictureBox1);
-			this->panel2->Controls->Add(this->checkBox1);
 			this->panel2->Location = System::Drawing::Point(0, 0);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(308, 695);
 			this->panel2->TabIndex = 16;
+			// 
+			// ExitPanel
+			// 
+			this->ExitPanel->Controls->Add(this->label7);
+			this->ExitPanel->Controls->Add(this->pictureBox8);
+			this->ExitPanel->Location = System::Drawing::Point(0, 617);
+			this->ExitPanel->Name = L"ExitPanel";
+			this->ExitPanel->Size = System::Drawing::Size(308, 64);
+			this->ExitPanel->TabIndex = 30;
 			// 
 			// label7
 			// 
@@ -499,7 +515,7 @@ namespace VIPZ {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label7->ForeColor = System::Drawing::Color::Black;
-			this->label7->Location = System::Drawing::Point(80, 643);
+			this->label7->Location = System::Drawing::Point(80, 21);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(39, 23);
 			this->label7->TabIndex = 24;
@@ -508,12 +524,119 @@ namespace VIPZ {
 			// pictureBox8
 			// 
 			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
-			this->pictureBox8->Location = System::Drawing::Point(12, 624);
+			this->pictureBox8->Location = System::Drawing::Point(12, 5);
 			this->pictureBox8->Name = L"pictureBox8";
 			this->pictureBox8->Size = System::Drawing::Size(62, 56);
 			this->pictureBox8->TabIndex = 23;
 			this->pictureBox8->TabStop = false;
 			this->pictureBox8->Click += gcnew System::EventHandler(this, &StudentsList::pictureBox8_Click);
+			// 
+			// FilterPanel
+			// 
+			this->FilterPanel->Controls->Add(this->label8);
+			this->FilterPanel->Controls->Add(this->pictureBox3);
+			this->FilterPanel->Location = System::Drawing::Point(0, 528);
+			this->FilterPanel->Name = L"FilterPanel";
+			this->FilterPanel->Size = System::Drawing::Size(308, 64);
+			this->FilterPanel->TabIndex = 29;
+			// 
+			// OrderPanel
+			// 
+			this->OrderPanel->Controls->Add(this->pictureBox1);
+			this->OrderPanel->Controls->Add(this->label4);
+			this->OrderPanel->Location = System::Drawing::Point(0, 458);
+			this->OrderPanel->Name = L"OrderPanel";
+			this->OrderPanel->Size = System::Drawing::Size(308, 64);
+			this->OrderPanel->TabIndex = 28;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label4->ForeColor = System::Drawing::Color::Black;
+			this->label4->Location = System::Drawing::Point(80, 17);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(159, 23);
+			this->label4->TabIndex = 19;
+			this->label4->Text = L"Order by ascending";
+			// 
+			// LoadPanel
+			// 
+			this->LoadPanel->Controls->Add(this->pictureBox6);
+			this->LoadPanel->Controls->Add(this->label1);
+			this->LoadPanel->Location = System::Drawing::Point(0, 248);
+			this->LoadPanel->Name = L"LoadPanel";
+			this->LoadPanel->Size = System::Drawing::Size(308, 64);
+			this->LoadPanel->TabIndex = 27;
+			// 
+			// pictureBox6
+			// 
+			this->pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(156)),
+				static_cast<System::Int32>(static_cast<System::Byte>(137)));
+			this->pictureBox6->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.ErrorImage")));
+			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
+			this->pictureBox6->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.InitialImage")));
+			this->pictureBox6->Location = System::Drawing::Point(12, 0);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(62, 56);
+			this->pictureBox6->TabIndex = 15;
+			this->pictureBox6->TabStop = false;
+			this->pictureBox6->Click += gcnew System::EventHandler(this, &StudentsList::pictureBox6_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(80, 17);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(186, 23);
+			this->label1->TabIndex = 16;
+			this->label1->Text = L"Load students from file";
+			// 
+			// InsertPanel
+			// 
+			this->InsertPanel->Controls->Add(this->pictureBox4);
+			this->InsertPanel->Controls->Add(this->label2);
+			this->InsertPanel->Location = System::Drawing::Point(0, 318);
+			this->InsertPanel->Name = L"InsertPanel";
+			this->InsertPanel->Size = System::Drawing::Size(308, 64);
+			this->InsertPanel->TabIndex = 26;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(80, 18);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(145, 23);
+			this->label2->TabIndex = 17;
+			this->label2->Text = L"Insert new sudent";
+			// 
+			// DeletePanel
+			// 
+			this->DeletePanel->Controls->Add(this->pictureBox2);
+			this->DeletePanel->Controls->Add(this->label3);
+			this->DeletePanel->Location = System::Drawing::Point(0, 388);
+			this->DeletePanel->Name = L"DeletePanel";
+			this->DeletePanel->Size = System::Drawing::Size(308, 64);
+			this->DeletePanel->TabIndex = 25;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label3->ForeColor = System::Drawing::Color::Black;
+			this->label3->Location = System::Drawing::Point(80, 18);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(204, 23);
+			this->label3->TabIndex = 18;
+			this->label3->Text = L"Delete students without 5";
 			// 
 			// label6
 			// 
@@ -529,7 +652,7 @@ namespace VIPZ {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(30, 163);
+			this->label5->Location = System::Drawing::Point(34, 163);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(126, 27);
 			this->label5->TabIndex = 21;
@@ -544,68 +667,6 @@ namespace VIPZ {
 			this->pictureBox7->TabIndex = 20;
 			this->pictureBox7->TabStop = false;
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label4->ForeColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(80, 469);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(159, 23);
-			this->label4->TabIndex = 19;
-			this->label4->Text = L"Order by ascending";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label3->ForeColor = System::Drawing::Color::Black;
-			this->label3->Location = System::Drawing::Point(80, 408);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(204, 23);
-			this->label3->TabIndex = 18;
-			this->label3->Text = L"Delete students without 5";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label2->ForeColor = System::Drawing::Color::Black;
-			this->label2->Location = System::Drawing::Point(80, 345);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(145, 23);
-			this->label2->TabIndex = 17;
-			this->label2->Text = L"Insert new sudent";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(80, 279);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(186, 23);
-			this->label1->TabIndex = 16;
-			this->label1->Text = L"Load students from file";
-			// 
-			// pictureBox6
-			// 
-			this->pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(156)),
-				static_cast<System::Int32>(static_cast<System::Byte>(137)));
-			this->pictureBox6->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.ErrorImage")));
-			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.InitialImage")));
-			this->pictureBox6->Location = System::Drawing::Point(12, 261);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(62, 56);
-			this->pictureBox6->TabIndex = 15;
-			this->pictureBox6->TabStop = false;
-			this->pictureBox6->Click += gcnew System::EventHandler(this, &StudentsList::pictureBox6_Click);
-			// 
 			// pictureBox9
 			// 
 			this->pictureBox9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(194)), static_cast<System::Int32>(static_cast<System::Byte>(201)),
@@ -615,11 +676,23 @@ namespace VIPZ {
 			this->pictureBox9->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.InitialImage")));
 			this->pictureBox9->Location = System::Drawing::Point(939, 528);
 			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(70, 64);
+			this->pictureBox9->Size = System::Drawing::Size(62, 56);
 			this->pictureBox9->TabIndex = 17;
 			this->pictureBox9->TabStop = false;
 			this->pictureBox9->Visible = false;
 			this->pictureBox9->Click += gcnew System::EventHandler(this, &StudentsList::pictureBox9_Click);
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label8->ForeColor = System::Drawing::Color::Black;
+			this->label8->Location = System::Drawing::Point(80, 19);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(50, 23);
+			this->label8->TabIndex = 20;
+			this->label8->Text = L"Filter";
 			// 
 			// StudentsList
 			// 
@@ -645,9 +718,21 @@ namespace VIPZ {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			this->ExitPanel->ResumeLayout(false);
+			this->ExitPanel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
+			this->FilterPanel->ResumeLayout(false);
+			this->FilterPanel->PerformLayout();
+			this->OrderPanel->ResumeLayout(false);
+			this->OrderPanel->PerformLayout();
+			this->LoadPanel->ResumeLayout(false);
+			this->LoadPanel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+			this->InsertPanel->ResumeLayout(false);
+			this->InsertPanel->PerformLayout();
+			this->DeletePanel->ResumeLayout(false);
+			this->DeletePanel->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			this->ResumeLayout(false);
 
@@ -662,6 +747,18 @@ namespace VIPZ {
 			BiologyComboBox->SelectedIndex = -1;
 		}
 	private: System::Void pictureBox5_Click(System::Object^  sender, System::EventArgs^  e) {
+		//INSERT PANEL 
+		InsertPanel->BackColor =
+			System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)),
+				static_cast<System::Int32>(static_cast<System::Byte>(137)));
+		pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
+
+
 		Panel1->Visible = false;
 		pictureBox5->Visible = false;
 		pictureBox9->Visible = false;
@@ -691,6 +788,41 @@ namespace VIPZ {
 	}
 			 //load from file
 private: System::Void pictureBox6_Click(System::Object^  sender, System::EventArgs^  e) {
+	//PANEL COLOR CHANGE LOAD
+	LoadPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+			static_cast<System::Int32>(static_cast<System::Byte>(168)),
+			static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+		static_cast<System::Int32>(static_cast<System::Byte>(168)),
+		static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	//INSERT PANEL 
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//DELETE PANEL
+	DeletePanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	// OREDER PANEL
+	OrderPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
+
 	Panel1->Visible = false;
 	pictureBox5->Visible = false;
 	pictureBox9->Visible = false;
@@ -702,6 +834,40 @@ private: System::Void pictureBox6_Click(System::Object^  sender, System::EventAr
 }
 		 //insert
 private: System::Void pictureBox4_Click(System::Object^  sender, System::EventArgs^  e) {
+	//LOAD PANEL
+	LoadPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//INSERT PANEL
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+			static_cast<System::Int32>(static_cast<System::Byte>(168)),
+			static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+		static_cast<System::Int32>(static_cast<System::Byte>(168)),
+		static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	//DELETE PANEL
+	DeletePanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	// OREDER PANEL
+	OrderPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
 	Panel1->Visible = true;
 	pictureBox5->Visible = true;
 	pictureBox9->Visible = true;
@@ -710,6 +876,40 @@ private: System::Void pictureBox4_Click(System::Object^  sender, System::EventAr
 
 		 //delete
 private: System::Void pictureBox2_Click(System::Object^  sender, System::EventArgs^  e) {
+	// delete panel
+	DeletePanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+			static_cast<System::Int32>(static_cast<System::Byte>(168)),
+			static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+		static_cast<System::Int32>(static_cast<System::Byte>(168)),
+		static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	//LOAD PANEL
+	LoadPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//INSERT PANEL 
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+// OREDER PANEL
+	OrderPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
 	Panel1->Visible = false;
 	pictureBox5->Visible = false;
 	pictureBox9->Visible = false;
@@ -720,6 +920,41 @@ private: System::Void pictureBox2_Click(System::Object^  sender, System::EventAr
 
 		 //sort
 private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
+	//ORDER PANEL 
+	OrderPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+			static_cast<System::Int32>(static_cast<System::Byte>(168)),
+			static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+		static_cast<System::Int32>(static_cast<System::Byte>(168)),
+		static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	//LOAD PANEL
+	LoadPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//INSERT PANEL 
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//DELETE PANEL
+	DeletePanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
+
 	Panel1->Visible = false;
 	pictureBox5->Visible = false;
 	pictureBox9->Visible = false;
@@ -729,23 +964,89 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 
 }
 		 int ignore = 1;
-	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		Panel1->Visible = false;
-		pictureBox5->Visible = false;
-		pictureBox9->Visible = false;
-		
-		ignore = 1 - ignore;
-		PrintTableForms(dataGridView1, ignore);
-	}
+	
 
 private: System::Void pictureBox8_Click(System::Object^  sender, System::EventArgs^  e) {
 	Application::Exit();
 }
 private: System::Void pictureBox9_Click(System::Object^  sender, System::EventArgs^  e) {
+
+	//INSERT PANEL 
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+
 	Panel1->Visible = false;
 	pictureBox5->Visible = false;
 	pictureBox9->Visible = false;
 	clearPanel();
+}
+
+private: System::Void pictureBox3_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (ignore) {
+		//FILTER PANEL 
+		FilterPanel->BackColor =
+			System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+				static_cast<System::Int32>(static_cast<System::Byte>(168)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)));
+		pictureBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(162)),
+			static_cast<System::Int32>(static_cast<System::Byte>(168)),
+			static_cast<System::Int32>(static_cast<System::Byte>(148)));
+	}if (!ignore) {
+		//FILTER PANEL 
+		FilterPanel->BackColor =
+			System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)),
+				static_cast<System::Int32>(static_cast<System::Byte>(137)));
+		pictureBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	}
+	
+	//LOAD PANEL
+	LoadPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//INSERT PANEL 
+	InsertPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	//DELETE PANEL
+	DeletePanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	// OREDER PANEL
+	OrderPanel->BackColor =
+		System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+			static_cast<System::Int32>(static_cast<System::Byte>(156)),
+			static_cast<System::Int32>(static_cast<System::Byte>(137)));
+	pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)),
+		static_cast<System::Int32>(static_cast<System::Byte>(156)),
+		static_cast<System::Int32>(static_cast<System::Byte>(137)));
+
+	Panel1->Visible = false;
+	pictureBox5->Visible = false;
+	pictureBox9->Visible = false;
+
+	ignore = 1 - ignore;
+	PrintTableForms(dataGridView1, ignore);
 }
 };
 }
