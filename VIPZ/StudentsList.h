@@ -653,30 +653,14 @@ namespace VIPZ {
 
 		}
 #pragma endregion
+		void clearPanel() {
 
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-
-	}
-	private: System::Void AddNewStudentButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-
-	}
-
-	private: System::Void deleteButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-	}
-
-	private: System::Void SortButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	
-	}
-			 
-
-	private: System::Void OkButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-
-	}
-
+			LastNameTextBox->Clear();
+			FirstNameTextBox2->Clear();
+			MathComboBox->SelectedIndex = -1;
+			HistoryComboBox->SelectedIndex = -1;
+			BiologyComboBox->SelectedIndex = -1;
+		}
 	private: System::Void pictureBox5_Click(System::Object^  sender, System::EventArgs^  e) {
 		Panel1->Visible = false;
 		pictureBox5->Visible = false;
@@ -701,6 +685,7 @@ namespace VIPZ {
 		Panel1->Visible = false;
 		pictureBox5->Visible = false;
 		pictureBox9->Visible = false;
+		clearPanel();
 	}
 			 //load from file
 private: System::Void pictureBox6_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -758,12 +743,7 @@ private: System::Void pictureBox9_Click(System::Object^  sender, System::EventAr
 	Panel1->Visible = false;
 	pictureBox5->Visible = false;
 	pictureBox9->Visible = false;
-	LastNameTextBox->Clear();
-	FirstNameTextBox2->Clear();
-	MathComboBox->SelectedIndex = -1;
-	HistoryComboBox->SelectedIndex = -1;
-	BiologyComboBox->SelectedIndex = -1;
-
+	clearPanel();
 }
 };
 }
