@@ -566,7 +566,7 @@ namespace VIPZ {
 			// 
 			this->OrderPanel->Controls->Add(this->pictureBox1);
 			this->OrderPanel->Controls->Add(this->label4);
-			this->OrderPanel->Location = System::Drawing::Point(0, 458);
+			this->OrderPanel->Location = System::Drawing::Point(0, 318);
 			this->OrderPanel->Name = L"OrderPanel";
 			this->OrderPanel->Size = System::Drawing::Size(308, 64);
 			this->OrderPanel->TabIndex = 28;
@@ -622,7 +622,7 @@ namespace VIPZ {
 			// 
 			this->InsertPanel->Controls->Add(this->pictureBox4);
 			this->InsertPanel->Controls->Add(this->label2);
-			this->InsertPanel->Location = System::Drawing::Point(0, 318);
+			this->InsertPanel->Location = System::Drawing::Point(0, 461);
 			this->InsertPanel->Name = L"InsertPanel";
 			this->InsertPanel->Size = System::Drawing::Size(308, 64);
 			this->InsertPanel->TabIndex = 26;
