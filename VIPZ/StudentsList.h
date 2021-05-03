@@ -678,6 +678,8 @@ namespace VIPZ {
 		//student.sBirthday = dateTimePicker1->Text;
 		toTmStruct(student.sBirthday, dateTimePicker1->Value);
 
+		student.fMarksAvg = (student.nMarks[0]+ student.nMarks[1] +student.nMarks[2]) / 3.0;
+
 		OrderByBirthdayAscending();
 		InsertStudent(student);
 

@@ -181,7 +181,7 @@ void OrderByBirthdayAscending() {
 				nIsSorted = 0;
 			}
 
-			if (pCurrentItem->pNext->pNext == nullptr) {
+			if (pCurrentItem->pNext == nullptr || pCurrentItem->pNext->pNext == nullptr) {
 				break;
 			}
 
